@@ -15,14 +15,14 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
             console.log(i_topics);
         i_topics.forEach(item => {
         cardCreator(item.headline, item.authorName, item.authorPhoto);
-       
-    
+
+
       });
 
         });
        });
 
-      
+
 
 // <div class="card">
 //   <div class="headline">{Headline of article}</div>
@@ -49,20 +49,19 @@ axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
         author.classList.add('author');
         imgCont.classList.add('img-container');
 
-        document.querySelector('.cards-container').appendChild(card);
-
+        headLine.innerText = i_headLine;
+        nameSpan.innerText = "By " + i_author;
+        image.src = i_image;
+        
+        
+        card.appendChild(headLine);
+        card.appendChild(author);
         author.appendChild(imgCont);
         imgCont.appendChild(image);
         author.appendChild(nameSpan);
-        card.appendChild(headLine);
-        card.appendChild(author);
-        console.log(image.src);
-
-        headLine.innerText = i_headLine;
-        author.innerText = "By " + i_author;
-        image.src = i_image;
-
         
+        
+        document.querySelector('.cards-container').appendChild(card);
 
 
     }
